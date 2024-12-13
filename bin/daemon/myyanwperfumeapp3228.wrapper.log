@@ -1,0 +1,66 @@
+2024-12-12 06:26:39 - Starting D:\nodejs\node.exe  --harmony D:\nodejs\node_global\node_modules\node-windows\lib\wrapper.js --file C:\HOMEPAGE\proj\Perfume\bin\www --scriptoptions= --log "myyanwPerfumeApp3228 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-12-12 06:26:44 - Started 36576
+2024-12-12 07:15:25 - Stopping myyanwperfumeapp3228.exe
+2024-12-12 07:15:25 - ProcessKill 36576
+2024-12-12 07:15:25 - Shutdown exception
+Message:系统正在关机。
+
+Stacktrace:   在 System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   在 System.Management.ManagementScope.InitializeGuts(Object o)
+   在 System.Management.ManagementScope.Initialize()
+   在 System.Management.ManagementObjectSearcher.Initialize()
+   在 System.Management.ManagementObjectSearcher.Get()
+   在 winsw.WrapperService.GetChildPids(Int32 pid)
+   在 winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   在 winsw.WrapperService.StopIt()
+   在 winsw.WrapperService.OnShutdown()
+2024-12-12 07:16:16 - Starting D:\nodejs\node.exe  --harmony D:\nodejs\node_global\node_modules\node-windows\lib\wrapper.js --file C:\HOMEPAGE\proj\Perfume\bin\www --scriptoptions= --log "myyanwPerfumeApp3228 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-12-12 07:16:17 - Started 6124
+2024-12-12 23:52:45 - Stopping myyanwperfumeapp3228.exe
+2024-12-12 23:52:45 - ProcessKill 6124
+2024-12-12 23:52:45 - Shutdown exception
+Message:系统正在关机。
+
+Stacktrace:   在 System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   在 System.Management.ManagementScope.InitializeGuts(Object o)
+   在 System.Management.ManagementScope.Initialize()
+   在 System.Management.ManagementObjectSearcher.Initialize()
+   在 System.Management.ManagementObjectSearcher.Get()
+   在 winsw.WrapperService.GetChildPids(Int32 pid)
+   在 winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   在 winsw.WrapperService.StopIt()
+   在 winsw.WrapperService.OnShutdown()
+2024-12-12 23:53:32 - Starting D:\nodejs\node.exe  --harmony D:\nodejs\node_global\node_modules\node-windows\lib\wrapper.js --file C:\HOMEPAGE\proj\Perfume\bin\www --scriptoptions= --log "myyanwPerfumeApp3228 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-12-12 23:53:40 - Started 7960
+2024-12-13 09:53:37 - Stopping myyanwperfumeapp3228.exe
+2024-12-13 09:53:37 - ProcessKill 7960
+2024-12-13 09:53:37 - Shutdown exception
+Message:系统正在关机。
+
+Stacktrace:   在 System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   在 System.Management.ManagementScope.InitializeGuts(Object o)
+   在 System.Management.ManagementScope.Initialize()
+   在 System.Management.ManagementObjectSearcher.Initialize()
+   在 System.Management.ManagementObjectSearcher.Get()
+   在 winsw.WrapperService.GetChildPids(Int32 pid)
+   在 winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   在 winsw.WrapperService.StopIt()
+   在 winsw.WrapperService.OnShutdown()
+2024-12-13 09:54:27 - Starting D:\nodejs\node.exe  --harmony D:\nodejs\node_global\node_modules\node-windows\lib\wrapper.js --file C:\HOMEPAGE\proj\Perfume\bin\www --scriptoptions= --log "myyanwPerfumeApp3228 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-12-13 09:54:27 - Started 1936
+2024-12-13 16:17:15 - Stopping myyanwperfumeapp3228.exe
+2024-12-13 16:17:15 - ProcessKill 1936
+2024-12-13 16:17:15 - Shutdown exception
+Message:系统正在关机。
+
+Stacktrace:   在 System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   在 System.Management.ManagementScope.InitializeGuts(Object o)
+   在 System.Management.ManagementScope.Initialize()
+   在 System.Management.ManagementObjectSearcher.Initialize()
+   在 System.Management.ManagementObjectSearcher.Get()
+   在 winsw.WrapperService.GetChildPids(Int32 pid)
+   在 winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   在 winsw.WrapperService.StopIt()
+   在 winsw.WrapperService.OnShutdown()
+2024-12-13 16:18:03 - Starting D:\nodejs\node.exe  --harmony D:\nodejs\node_global\node_modules\node-windows\lib\wrapper.js --file C:\HOMEPAGE\proj\Perfume\bin\www --scriptoptions= --log "myyanwPerfumeApp3228 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-12-13 16:18:04 - Started 6828

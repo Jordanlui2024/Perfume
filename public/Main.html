@@ -1,0 +1,546 @@
+<!-- <!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>聖誕禮物首選</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "微軟正黑體", Arial, sans-serif;
+      }
+
+      body {
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.4),
+            /* 黑色透明疊加 */ rgba(0, 0, 0, 0.4)
+          ),
+          url("/background.jpg") no-repeat center center fixed;
+        background-size: cover; /* 確保背景圖覆蓋整個頁面 */
+        color: #fff; /* 調整文字顏色為白色，確保可讀性 */
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .header {
+        background-color: #b32d2d;
+        background-image: linear-gradient(135deg, #b32d2d 0%, #8b2323 100%);
+        width: 100%;
+        text-align: center;
+        padding: 3.5rem 1rem;
+        margin-bottom: 4rem;
+        position: relative;
+        overflow: hidden; /* 確保雪花不會溢出 header */
+        box-shadow: 0 4px 20px rgba(179, 45, 45, 0.2);
+      }
+
+      .header h1 {
+        font-size: 3rem;
+        color: white;
+        margin-bottom: 1.2rem;
+        position: relative;
+        z-index: 1;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .header p {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.4rem;
+        position: relative;
+        z-index: 1;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      /* 雪花效果僅限 header 區域 */
+      .snow {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: white;
+        border-radius: 50%;
+        filter: blur(2px);
+        animation: snowfall linear infinite;
+        opacity: 0;
+      }
+
+      .snow:nth-child(1) {
+        left: 10%;
+        animation-duration: 10s;
+        animation-delay: 0s;
+      }
+      .snow:nth-child(2) {
+        left: 20%;
+        animation-duration: 12s;
+        animation-delay: 1s;
+      }
+      .snow:nth-child(3) {
+        left: 30%;
+        animation-duration: 8s;
+        animation-delay: 2s;
+      }
+      .snow:nth-child(4) {
+        left: 40%;
+        animation-duration: 11s;
+        animation-delay: 0.5s;
+      }
+      .snow:nth-child(5) {
+        left: 50%;
+        animation-duration: 9s;
+        animation-delay: 1.5s;
+      }
+      .snow:nth-child(6) {
+        left: 60%;
+        animation-duration: 13s;
+        animation-delay: 2.5s;
+      }
+      .snow:nth-child(7) {
+        left: 70%;
+        animation-duration: 10s;
+        animation-delay: 1s;
+      }
+      .snow:nth-child(8) {
+        left: 80%;
+        animation-duration: 12s;
+        animation-delay: 0s;
+      }
+      .snow:nth-child(9) {
+        left: 90%;
+        animation-duration: 11s;
+        animation-delay: 2s;
+      }
+      .snow:nth-child(10) {
+        left: 95%;
+        animation-duration: 9s;
+        animation-delay: 1.5s;
+      }
+
+      @keyframes snowfall {
+        0% {
+          transform: translateY(-10px) translateX(-20px);
+          opacity: 0;
+        }
+        20% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(300px) translateX(20px); /* 限制雪花只在 header 範圍內掉落 */
+          opacity: 0;
+        }
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+        max-width: 1200px;
+        width: 100%;
+        padding: 0 2rem;
+        margin-bottom: 4rem;
+      }
+
+      .project-card {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      .project-content {
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .project-title {
+        font-size: 2rem;
+        color: #2d3436;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .project-description {
+        color: #636e72;
+        line-height: 1.6;
+        margin-bottom: 1.8rem;
+        font-size: 1.1rem;
+      }
+
+      .project-link {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: linear-gradient(135deg, #b32d2d 0%, #8b2323 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+      }
+
+      .project-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(179, 45, 45, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <!-- 雪花元素 -->
+<!-- <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+
+      <h1>🎄 聖誕禮物首選 🎄</h1>
+      <p>為摯愛精心挑選的完美禮物</p>
+    </header>
+
+    <main class="projects">
+      <div class="project-card">
+        <div class="product-image-container">
+          <img
+            src="/images/earphones.jpg"
+            alt="高品質耳機"
+            class="product-image"
+          />
+        </div>
+        <div class="project-content">
+          <h2 class="project-title">耳機</h2>
+          <p class="project-description">
+            沉浸式音樂體驗，讓每個音符更感動。享受無與倫比的音質，打造專屬於你的聲音饗宴。
+          </p>
+          <a href="/earphones" class="project-link">查看耳機</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="product-image-container">
+          <img src="perfume.jpg" alt="香水" class="product-image" />
+        </div>
+        <div class="project-content">
+          <h2 class="project-title">香水</h2>
+          <p class="project-description">
+            尋找屬於你的專屬香氣，完美呈現你的魅力，讓香氛訴說你的故事。
+          </p>
+          <a href="/perfume" class="project-link">查看香水</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>  -->
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>聖誕禮物首選</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "微軟正黑體", Arial, sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        background: url("/background5.jpg") center/cover no-repeat fixed;
+        background-color: #0a192f;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header {
+        width: 100%;
+        text-align: center;
+        padding: 3.5rem 1rem;
+        margin-bottom: 4rem;
+        position: relative;
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.3);
+      }
+
+      /* 雪花效果 */
+      .snow {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: white;
+        border-radius: 50%;
+        filter: blur(1px);
+        animation: snowfall linear infinite;
+        opacity: 0;
+      }
+
+      .snow:nth-child(1) {
+        left: 10%;
+        animation-duration: 10s;
+        animation-delay: 0s;
+      }
+      .snow:nth-child(2) {
+        left: 20%;
+        animation-duration: 12s;
+        animation-delay: 1s;
+      }
+      .snow:nth-child(3) {
+        left: 30%;
+        animation-duration: 8s;
+        animation-delay: 2s;
+      }
+      .snow:nth-child(4) {
+        left: 40%;
+        animation-duration: 11s;
+        animation-delay: 0.5s;
+      }
+      .snow:nth-child(5) {
+        left: 50%;
+        animation-duration: 9s;
+        animation-delay: 1.5s;
+      }
+      .snow:nth-child(6) {
+        left: 60%;
+        animation-duration: 13s;
+        animation-delay: 2.5s;
+      }
+      .snow:nth-child(7) {
+        left: 70%;
+        animation-duration: 10s;
+        animation-delay: 1s;
+      }
+      .snow:nth-child(8) {
+        left: 80%;
+        animation-duration: 12s;
+        animation-delay: 0s;
+      }
+      .snow:nth-child(9) {
+        left: 90%;
+        animation-duration: 11s;
+        animation-delay: 2s;
+      }
+      .snow:nth-child(10) {
+        left: 95%;
+        animation-duration: 9s;
+        animation-delay: 1.5s;
+      }
+
+      @keyframes snowfall {
+        0% {
+          transform: translateY(-10px) translateX(-20px);
+          opacity: 0;
+        }
+        20% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(400px) translateX(20px);
+          opacity: 0;
+        }
+      }
+
+      .header h1 {
+        font-size: 3rem;
+        color: white;
+        margin-bottom: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8rem;
+        position: relative;
+        z-index: 1;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .header p {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.4rem;
+        position: relative;
+        z-index: 1;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+        max-width: 1200px;
+        width: 100%;
+        padding: 0 2rem;
+        margin-bottom: 4rem;
+      }
+
+      .project-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .product-image {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin-bottom: 2rem;
+        border-radius: 10px;
+        transition: transform 0.5s ease;
+      }
+
+      .project-card:hover .product-image {
+        transform: scale(1.05);
+      }
+
+      .project-content {
+        text-align: center;
+        width: 100%;
+      }
+
+      .project-title {
+        font-size: 2rem;
+        color: #2d3436;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .project-description {
+        color: #636e72;
+        line-height: 1.6;
+        margin-bottom: 1.8rem;
+        font-size: 1.1rem;
+      }
+
+      .project-link {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: linear-gradient(135deg, #b32d2d 0%, #8b2323 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .project-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(179, 45, 45, 0.3);
+      }
+
+      @media (max-width: 768px) {
+        .projects {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          padding: 0 1.5rem;
+        }
+
+        .header {
+          padding: 2.5rem 1rem;
+        }
+
+        .header h1 {
+          font-size: 2.2rem;
+        }
+
+        .header p {
+          font-size: 1.1rem;
+        }
+
+        .project-card {
+          max-width: 500px;
+          margin: 0 auto;
+        }
+
+        .product-image {
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <!-- 雪花元素 -->
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+
+        <h1>🎄 聖誕禮物首選 🎄</h1>
+        <p>為摯愛精心挑選的完美禮物</p>
+      </header>
+
+      <main class="projects">
+        <article class="project-card">
+          <div class="product-image-container">
+            <img src="/headphone.jpg" alt="高品質耳機" class="product-image" />
+          </div>
+          <div class="project-content">
+            <h2 class="project-title">耳機</h2>
+            <p class="project-description">
+              沉浸式音樂體驗，讓每個音符更感動。享受無與倫比的音質，打造專屬於你的聲音饗宴。
+            </p>
+            <a href="https://lwh2024.us.kg:2087/"  target="_blank" class="project-link">查看耳機</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="product-image-container">
+            <img src="/perfume.jpg" alt="精緻香水" class="product-image" />
+          </div>
+          <div class="project-content">
+            <h2 class="project-title">香水</h2>
+            <p class="project-description">
+              尋找屬於你的專屬香氣，完美呈現你的魅力，讓香氛訴說你的故事。
+            </p>
+            <a href="https://lwh2024.us.kg:2053/" target="_blank"  class="project-link">查看香水</a>
+          </div>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>

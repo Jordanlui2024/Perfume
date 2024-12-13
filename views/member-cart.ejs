@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>會員購物車 | 香氣美學</title>
+    <link rel="stylesheet" href="/stylesheets/style.css?v=1.0" />
+  </head>
+  <body>
+    <div class="cart-container">
+      <h2>會員購物車</h2>
+      <% if (perfumes && perfumes.length > 0) { %>
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>商品圖片</th>
+            <th>商品名稱</th>
+            <th>香調</th>
+            <th>價格</th>
+            <th>數量</th>
+            <th>小計</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% perfumes.forEach(function(item) { %>
+          <tr>
+            <td>
+              <img
+                src="<%= item.perfume.image %>"
+                alt="<%= item.perfume.name %>"
+                width="50"
+              />
+            </td>
+            <td><%= item.perfume.name %></td>
+            <td><%= item.perfume.type %></td>
+            <td>HKD$ <%= item.perfume.price %></td>
+            <td><%= item.quantity %></td>
+            <td>HKD$ <%= (item.perfume.price * item.quantity).toFixed(2) %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <% } else { %>
+      <p>您的購物車目前為空。</p>
+      <% } %>
+      <a href="/member">返回會員中心</a>
+    </div>
+  </body>
+</html>
